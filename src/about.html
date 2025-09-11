@@ -3,46 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Название вашего сайта</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>О нас - Название вашего сайта</title>
     <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <header>
-        <a href="/">Логотип или название сайта</a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container site-header__container">
+            <a href="index.html" class="site-header__brand">Логотип или название сайта</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li><a href="index.html" class="site-nav__link">Главная</a></li>
+                    <li><a href="about.html" class="site-nav__link site-nav__link--active">О нас</a></li>
+                    <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Простые "хлебные крошки" -->
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
+    <main class="main-content container">
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html" class="breadcrumbs__link">Главная</a> →
+            <span class="breadcrumbs__current">О нас</span>
         </nav>
 
         <h1>О нашей компании</h1>
-        <section>
-            <h2>Наша история</h2>
+        
+        <section class="section" id="history">
+            <h2 class="section__title">Наша история</h2>
             <p>Текст о том, как все начиналось...</p>
+            
+            <!-- Responsive изображение -->
+            <picture>
+                <source type="image/webp" srcset="assets/history.webp">
+                <img src="assets/history.jpg" alt="История нашей компании" 
+                     class="responsive-image" width="800" height="450" loading="lazy">
+            </picture>
         </section>
-        <section>
-            <h2>Наша команда</h2>
+        
+        <section class="section" id="team">
+            <h2 class="section__title">Наша команда</h2>
             <p>Текст о команде...</p>
+            
+            <!-- Видео с Rutube -->
+            <div class="media">
+                <iframe src="https://rutube.ru/play/embed/XXXXXXXXXXX"
+                        title="Видео о нашей команде"
+                        allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                        allowfullscreen loading="lazy"></iframe>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
+    <footer class="site-footer">
+        <div class="container site-footer__container">
+            <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+        </div>
     </footer>
 </body>
 </html>
