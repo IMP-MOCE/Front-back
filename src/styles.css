@@ -258,7 +258,7 @@ html {
 /* Герой-секция */
 .hero {
   background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15)),
-              url("assets/hero-bg.jpg") center/cover no-repeat;
+              url("../assets/Screenshot_2.png") center/cover no-repeat;
   color: white;
   padding: clamp(2rem, 6vw, 6rem) 1rem;
   border-radius: var(--radius);
@@ -284,4 +284,40 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Переключатель темы */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-muted);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--color-primary);
+}
+
+.theme-toggle__icon {
+    font-size: 1.2rem;
+}
+
+.theme-toggle__text {
+    font-size: 0.875rem;
+}
+
+/* Адаптивность для переключателя */
+@media (max-width: 768px) {
+    .theme-toggle__text {
+        display: none;
+    }
+    
+    .theme-toggle {
+        padding: var(--space-2);
+    }
 }
